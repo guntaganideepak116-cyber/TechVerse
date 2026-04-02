@@ -20,7 +20,7 @@ class LandingPage extends StatelessWidget {
             filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
             child: AppBar(
               backgroundColor:
-                  Theme.of(context).scaffoldBackgroundColor.withOpacity(0.85),
+                  Theme.of(context).scaffoldBackgroundColor.withValues(alpha: 0.85),
               elevation: 0,
               centerTitle: false,
               titleSpacing: 0,
@@ -97,9 +97,9 @@ class LandingPage extends StatelessWidget {
               end: Alignment.topCenter,
               colors: [
                 Theme.of(context).scaffoldBackgroundColor,
-                Theme.of(context)
+                    Theme.of(context)
                     .scaffoldBackgroundColor
-                    .withOpacity(0.5),
+                    .withValues(alpha: 0.5),
                 Colors.transparent,
               ],
               stops: const [0.0, 0.45, 1.0],
@@ -124,11 +124,11 @@ class LandingPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 14, vertical: 6),
                     decoration: BoxDecoration(
-                      color: AppColors.primaryLight.withOpacity(0.2),
+                      color: AppColors.primaryLight.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(
                           color:
-                              AppColors.primaryLight.withOpacity(0.4)),
+                              AppColors.primaryLight.withValues(alpha: 0.4)),
                     ),
                     child: const Text(
                       '✨ YOUR OFFLINE TECH ENCYCLOPEDIA',
@@ -160,7 +160,7 @@ class LandingPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.white.withOpacity(0.85),
+                      color: Colors.white.withValues(alpha: 0.85),
                       height: 1.6,
                       fontWeight: FontWeight.w400,
                     ),
@@ -180,7 +180,7 @@ class LandingPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(16)),
                       elevation: 8,
                       shadowColor:
-                          AppColors.primaryLight.withOpacity(0.4),
+                          AppColors.primaryLight.withValues(alpha: 0.4),
                     ),
                     child: const Row(
                       mainAxisSize: MainAxisSize.min,
@@ -339,7 +339,7 @@ class LandingPage extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: features.length,
-            separatorBuilder: (_, __) => const SizedBox(height: 12),
+            separatorBuilder: (_, _) => const SizedBox(height: 12),
             itemBuilder: (context, index) {
               final feat = features[index];
               return Container(
@@ -351,7 +351,7 @@ class LandingPage extends StatelessWidget {
                       color: Theme.of(context).dividerColor),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.05),
+                      color: Colors.black.withValues(alpha: 0.05),
                       blurRadius: 12,
                       offset: const Offset(0, 4),
                     ),
@@ -528,7 +528,7 @@ class LandingPage extends StatelessWidget {
         borderRadius: BorderRadius.circular(28),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primaryLight.withOpacity(0.3),
+            color: AppColors.primaryLight.withValues(alpha: 0.3),
             blurRadius: 24,
             offset: const Offset(0, 10),
           ),

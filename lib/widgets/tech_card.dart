@@ -67,7 +67,7 @@ class _TechCardState extends ConsumerState<TechCard> {
                     ..setEntry(3, 2, 0.002) // Perspective
                     ..rotateX(_rotateX)
                     ..rotateY(_rotateY)
-                    ..scale(scale),
+                    ..scaleByDouble(scale, scale, 1.0, 1.0),
                   child: child,
                 );
               },
@@ -103,7 +103,7 @@ class _TechCardState extends ConsumerState<TechCard> {
                                    begin: Alignment.bottomCenter,
                                    end: Alignment.topCenter,
                                    colors: [
-                                      Theme.of(context).cardColor.withOpacity(0.8),
+                                      Theme.of(context).cardColor.withValues(alpha: 0.8),
                                       Colors.transparent,
                                    ],
                                  ),
@@ -115,7 +115,7 @@ class _TechCardState extends ConsumerState<TechCard> {
                             top: 8,
                             right: 8,
                             child: Material(
-                              color: Colors.white.withOpacity(0.2),
+                              color: Colors.white.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(20),
                               child: InkWell(
                                 onTap: () => ref.read(bookmarkProvider.notifier).toggleBookmark(widget.tech.id),
@@ -158,7 +158,7 @@ class _TechCardState extends ConsumerState<TechCard> {
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                                   decoration: BoxDecoration(
-                                    color: _getDifficultyColor(widget.tech.difficulty, isDark).withOpacity(0.15),
+                                    color: _getDifficultyColor(widget.tech.difficulty, isDark).withValues(alpha: 0.15),
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Text(

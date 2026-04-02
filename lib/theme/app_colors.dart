@@ -35,7 +35,7 @@ class AppColors {
 
   static List<BoxShadow> cardShadow(bool isDark) => [
     BoxShadow(
-      color: isDark ? Colors.black.withOpacity(0.3) : const Color(0xFF1E2629).withOpacity(0.08),
+      color: isDark ? Colors.black.withValues(alpha: 0.3) : const Color(0xFF1E2629).withValues(alpha: 0.08),
       blurRadius: 16,
       offset: const Offset(0, 2),
     ),
@@ -43,7 +43,7 @@ class AppColors {
 
   static List<BoxShadow> cardShadowHover(bool isDark) => [
     BoxShadow(
-      color: primaryLight.withOpacity(isDark ? 0.25 : 0.18),
+      color: primaryLight.withValues(alpha: isDark ? 0.25 : 0.18),
       blurRadius: 30,
       offset: const Offset(0, 8),
     ),

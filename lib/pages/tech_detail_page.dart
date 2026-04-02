@@ -107,7 +107,7 @@ class TechDetailPage extends ConsumerWidget {
                   Theme.of(context).scaffoldBackgroundColor,
                   Theme.of(context)
                       .scaffoldBackgroundColor
-                      .withOpacity(0.25),
+                      .withValues(alpha: 0.25),
                   Colors.transparent,
                 ],
                 stops: const [0.0, 0.4, 1.0],
@@ -147,7 +147,7 @@ class TechDetailPage extends ConsumerWidget {
           right: 16,
           child: Material(
             color: isBookmarked
-                ? Colors.red.withOpacity(0.85)
+                ? Colors.red.withValues(alpha: 0.85)
                 : Colors.black45,
             shape: const CircleBorder(),
             child: InkWell(
@@ -186,7 +186,7 @@ class TechDetailPage extends ConsumerWidget {
             color: Theme.of(context).dividerColor, width: 1.5),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.3 : 0.1),
+            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.1),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -214,10 +214,10 @@ class TechDetailPage extends ConsumerWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
-                  color: AppColors.primaryLight.withOpacity(0.15),
+                  color: AppColors.primaryLight.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                      color: AppColors.primaryLight.withOpacity(0.3)),
+                      color: AppColors.primaryLight.withValues(alpha: 0.3)),
                 ),
                 child: Text(
                   tech.difficulty,

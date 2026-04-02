@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
             Border.all(color: Theme.of(context).dividerColor, width: 1.2),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 12,
             offset: const Offset(0, 4),
           ),
@@ -180,7 +180,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         clipBehavior: Clip.none,
         itemCount: categories.length,
-        separatorBuilder: (_, __) => const SizedBox(width: 8),
+        separatorBuilder: (_, _) => const SizedBox(width: 8),
         itemBuilder: (context, index) {
           final cat = categories[index];
           return CategoryChip(
@@ -218,7 +218,7 @@ class _HomePageState extends State<HomePage> {
             Icon(
               LucideIcons.search,
               size: 44,
-              color: AppColors.mutedForegroundLight.withOpacity(0.4),
+              color: AppColors.mutedForegroundLight.withValues(alpha: 0.4),
             ),
             const SizedBox(height: 16),
             const Text(

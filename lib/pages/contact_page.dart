@@ -189,10 +189,10 @@ class _ContactPageState extends State<ContactPage> {
                       key: const ValueKey('sent'),
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       decoration: BoxDecoration(
-                        color: AppColors.primaryLight.withOpacity(0.12),
+                        color: AppColors.primaryLight.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(18),
                         border: Border.all(
-                            color: AppColors.primaryLight.withOpacity(0.4)),
+                            color: AppColors.primaryLight.withValues(alpha: 0.4)),
                       ),
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -227,7 +227,7 @@ class _ContactPageState extends State<ContactPage> {
                             borderRadius: BorderRadius.circular(18)),
                         elevation: 6,
                         shadowColor:
-                            AppColors.primaryLight.withOpacity(0.35),
+                            AppColors.primaryLight.withValues(alpha: 0.35),
                       ),
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,

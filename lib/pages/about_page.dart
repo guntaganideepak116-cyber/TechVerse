@@ -87,8 +87,8 @@ class AboutPage extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            AppColors.primaryLight.withOpacity(0.08),
-            AppColors.accentLight.withOpacity(0.05),
+            AppColors.primaryLight.withValues(alpha: 0.08),
+            AppColors.accentLight.withValues(alpha: 0.05),
           ],
         ),
       ),
@@ -229,7 +229,7 @@ class AboutPage extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primaryLight.withOpacity(0.25),
+            color: AppColors.primaryLight.withValues(alpha: 0.25),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),

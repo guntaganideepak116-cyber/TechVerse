@@ -1,0 +1,16 @@
+﻿Analyzing flutter_app...                                        
+
+   info - 'scale' is deprecated and shouldn't be used. Use scaleByVector3, scaleByVector4, or scaleByDouble instead - lib\widgets\tech_card.dart:70:23 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\tech_card.dart:106:67 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\tech_card.dart:118:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\tech_card.dart:161:96 - deprecated_member_use
+
+flutter : 4 issues found. (ran in 4.1s)
+At line:1 char:1
++ flutter analyze 2>&1 | ForEach-Object { $_ } | Out-File 
+-FilePath "an ...
++ ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (4 issues 
+found. (    ran in 4.1s):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

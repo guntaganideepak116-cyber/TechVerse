@@ -54,7 +54,7 @@ class AppLayout extends ConsumerWidget {
           filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
           child: AppBar(
             backgroundColor:
-                Theme.of(context).cardColor.withOpacity(0.88),
+                Theme.of(context).cardColor.withValues(alpha: 0.88),
             elevation: 0,
             shape: Border(
               bottom: BorderSide(
@@ -227,7 +227,7 @@ class AppLayout extends ConsumerWidget {
     required VoidCallback onTap,
   }) {
     return Material(
-      color: active ? AppColors.primaryLight.withOpacity(0.12) : Colors.transparent,
+      color: active ? AppColors.primaryLight.withValues(alpha: 0.12) : Colors.transparent,
       borderRadius: BorderRadius.circular(14),
       child: InkWell(
         borderRadius: BorderRadius.circular(14),
@@ -268,7 +268,7 @@ class AppLayout extends ConsumerWidget {
         child: Container(
           height: 60 + MediaQuery.of(context).padding.bottom,
           decoration: BoxDecoration(
-            color: Theme.of(context).cardColor.withOpacity(0.88),
+            color: Theme.of(context).cardColor.withValues(alpha: 0.88),
             border: Border(
                 top: BorderSide(
                     color: Theme.of(context).dividerColor, width: 0.8)),
@@ -296,7 +296,7 @@ class AppLayout extends ConsumerWidget {
                                 horizontal: 12, vertical: 4),
                             decoration: BoxDecoration(
                               color: active
-                                  ? AppColors.primaryLight.withOpacity(0.12)
+                                  ? AppColors.primaryLight.withValues(alpha: 0.12)
                                   : Colors.transparent,
                               borderRadius: BorderRadius.circular(20),
                             ),
