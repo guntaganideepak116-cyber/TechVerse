@@ -235,9 +235,9 @@ class AboutPage extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text(
             'TechVerse v1.0',
             style: TextStyle(
