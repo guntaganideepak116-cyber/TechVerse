@@ -41,7 +41,7 @@ class BookmarksPage extends ConsumerWidget {
                       crossAxisCount: 2,
                       mainAxisSpacing: 12,
                       crossAxisSpacing: 12,
-                      childAspectRatio: 0.82,
+                      childAspectRatio: 0.72,
                     ),
                   ),
                 ),

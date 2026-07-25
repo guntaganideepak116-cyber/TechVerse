@@ -65,7 +65,7 @@ class TechDetailPage extends ConsumerWidget {
             _buildTitleArea(context, tech),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24),
+                  const EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 24.0),
               child: Column(
                 children: sections.asMap().entries.map((entry) => SectionCard(
                       title: entry.value['title'] as String,
@@ -176,94 +176,99 @@ class TechDetailPage extends ConsumerWidget {
   Widget _buildTitleArea(BuildContext context, TechModel tech) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Container(
-      margin: const EdgeInsets.fromLTRB(20, -36, 20, 0),
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: Theme.of(context).cardColor,
-        borderRadius: BorderRadius.circular(24),
-        border: Border.all(
-            color: Theme.of(context).dividerColor, width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Transform.translate(
+        offset: const Offset(0, -36),
+        child: Container(
+          padding: const EdgeInsets.all(24),
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            borderRadius: BorderRadius.circular(24),
+            border: Border.all(
+                color: Theme.of(context).dividerColor, width: 1.5),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.1),
+                blurRadius: 20,
+                offset: const Offset(0, 10),
+              ),
+            ],
           ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: Text(
-                  tech.title,
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: -1.0,
-                    height: 1.2,
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Text(
+                      tech.title,
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: -1.0,
+                        height: 1.2,
+                      ),
+                    ),
                   ),
+                  const SizedBox(width: 10),
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryLight.withValues(alpha: 0.15),
+                      borderRadius: BorderRadius.circular(20),
+                      border: Border.all(
+                          color: AppColors.primaryLight.withValues(alpha: 0.3)),
+                    ),
+                    child: Text(
+                      tech.difficulty,
+                      style: const TextStyle(
+                        color: AppColors.primaryLight,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: 0.2,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              Text(
+                tech.tagline,
+                style: const TextStyle(
+                  color: AppColors.mutedForegroundLight,
+                  fontSize: 14,
+                  height: 1.5,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(height: 14),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: AppColors.primaryLight.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                      color: AppColors.primaryLight.withValues(alpha: 0.3)),
+                  color: isDark
+                      ? AppColors.secondaryDark
+                      : AppColors.secondaryLight,
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  tech.difficulty,
-                  style: const TextStyle(
-                    color: AppColors.primaryLight,
+                  tech.category,
+                  style: TextStyle(
                     fontSize: 11,
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 0.2,
+                    fontWeight: FontWeight.w800,
+                    color: isDark
+                        ? AppColors.primaryDark
+                        : AppColors.primaryLight,
+                    letterSpacing: -0.1,
                   ),
                 ),
               ),
             ],
           ),
-          const SizedBox(height: 10),
-          Text(
-            tech.tagline,
-            style: const TextStyle(
-              color: AppColors.mutedForegroundLight,
-              fontSize: 14,
-              height: 1.5,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-          const SizedBox(height: 14),
-          Container(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-            decoration: BoxDecoration(
-              color: isDark
-                  ? AppColors.secondaryDark
-                  : AppColors.secondaryLight,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Text(
-              tech.category,
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w800,
-                color: isDark
-                    ? AppColors.primaryDark
-                    : AppColors.primaryLight,
-                letterSpacing: -0.1,
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     ).animate().slideY(begin: 0.1, duration: 400.ms, delay: 100.ms).fadeIn();
   }
