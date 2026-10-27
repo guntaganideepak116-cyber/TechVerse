@@ -29,18 +29,33 @@ class LandingPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ShaderMask(
-                      shaderCallback: (bounds) =>
-                          AppColors.primaryGradient.createShader(bounds),
-                      child: const Text(
-                        'TechVerse',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
-                          letterSpacing: -0.5,
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            'assets/tech_verse_icon.png',
+                            width: 28,
+                            height: 28,
+                            fit: BoxFit.contain,
+                          ),
                         ),
-                      ),
+                        const SizedBox(width: 10),
+                        ShaderMask(
+                          shaderCallback: (bounds) =>
+                              AppColors.primaryGradient.createShader(bounds),
+                          child: const Text(
+                            'TechVerse',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: -0.5,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     ElevatedButton(
                       onPressed: () => context.go('/home'),
@@ -596,11 +611,25 @@ class LandingPage extends StatelessWidget {
         left: 20,
         right: 20,
       ),
-      child: const Text(
-        '© 2025 TechVerse — Offline Tech Encyclopedia.\nMade with ❤️ for learners.',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            color: AppColors.mutedForegroundLight, fontSize: 12, height: 1.6),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.asset(
+              'assets/tech_verse_icon.png',
+              width: 32,
+              height: 32,
+              fit: BoxFit.contain,
+            ),
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            '© 2025 TechVerse — Offline Tech Encyclopedia.\nMade with ❤️ for learners.',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: AppColors.mutedForegroundLight, fontSize: 12, height: 1.6),
+          ),
+        ],
       ),
     );
   }

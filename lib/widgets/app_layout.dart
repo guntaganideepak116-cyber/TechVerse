@@ -71,18 +71,33 @@ class AppLayout extends ConsumerWidget {
             ),
             title: GestureDetector(
               onTap: () => context.go('/'),
-              child: ShaderMask(
-                shaderCallback: (bounds) =>
-                    AppColors.primaryGradient.createShader(bounds),
-                child: const Text(
-                  'TechVerse',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    color: Colors.white,
-                    fontSize: 18,
-                    letterSpacing: -0.5,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(6),
+                    child: Image.asset(
+                      'assets/tech_verse_icon.png',
+                      width: 24,
+                      height: 24,
+                      fit: BoxFit.contain,
+                    ),
                   ),
-                ),
+                  const SizedBox(width: 8),
+                  ShaderMask(
+                    shaderCallback: (bounds) =>
+                        AppColors.primaryGradient.createShader(bounds),
+                    child: const Text(
+                      'TechVerse',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                        fontSize: 18,
+                        letterSpacing: -0.5,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             actions: [
@@ -134,18 +149,33 @@ class AppLayout extends ConsumerWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ShaderMask(
-                    shaderCallback: (bounds) =>
-                        AppColors.primaryGradient.createShader(bounds),
-                    child: const Text(
-                      'TechVerse',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: -0.5,
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          'assets/tech_verse_icon.png',
+                          width: 28,
+                          height: 28,
+                          fit: BoxFit.contain,
+                        ),
                       ),
-                    ),
+                      const SizedBox(width: 10),
+                      ShaderMask(
+                        shaderCallback: (bounds) =>
+                            AppColors.primaryGradient.createShader(bounds),
+                        child: const Text(
+                          'TechVerse',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: -0.5,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   IconButton(
                     icon: const Icon(LucideIcons.x, size: 18),

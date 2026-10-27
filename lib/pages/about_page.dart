@@ -34,35 +34,51 @@ class AboutPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        RichText(
-          text: TextSpan(
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w900,
-              letterSpacing: -1,
-              color: Theme.of(context).textTheme.displayLarge?.color,
+        Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(
+                'assets/tech_verse_icon.png',
+                width: 44,
+                height: 44,
+                fit: BoxFit.contain,
+              ),
             ),
-            children: [
-              const TextSpan(text: 'About '),
-              WidgetSpan(
-                alignment: PlaceholderAlignment.baseline,
-                baseline: TextBaseline.alphabetic,
-                child: ShaderMask(
-                  shaderCallback: (bounds) =>
-                      AppColors.primaryGradient.createShader(bounds),
-                  child: const Text(
-                    'TechVerse',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: -1,
-                    ),
+            const SizedBox(width: 14),
+            Expanded(
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: -1,
+                    color: Theme.of(context).textTheme.displayLarge?.color,
                   ),
+                  children: [
+                    const TextSpan(text: 'About '),
+                    WidgetSpan(
+                      alignment: PlaceholderAlignment.baseline,
+                      baseline: TextBaseline.alphabetic,
+                      child: ShaderMask(
+                        shaderCallback: (bounds) =>
+                            AppColors.primaryGradient.createShader(bounds),
+                        child: const Text(
+                          'TechVerse',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 30,
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: -1,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ).animate().fadeIn(),
         const SizedBox(height: 10),
         const Text(
@@ -235,25 +251,42 @@ class AboutPage extends StatelessWidget {
           ),
         ],
       ),
-      child: const Column(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'TechVerse v1.0',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.w900,
-              letterSpacing: -0.5,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.asset(
+              'assets/tech_verse_icon.png',
+              width: 44,
+              height: 44,
+              fit: BoxFit.contain,
             ),
           ),
-          SizedBox(height: 6),
-          Text(
-            'Built with Flutter • 100% Offline • 25+ Technologies\nMade with ❤️ for learners everywhere.',
-            style: TextStyle(
-              color: Colors.white70,
-              fontSize: 12,
-              height: 1.6,
+          const SizedBox(width: 14),
+          const Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'TechVerse v1.0',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: -0.5,
+                  ),
+                ),
+                SizedBox(height: 6),
+                Text(
+                  'Built with Flutter • 100% Offline • 25+ Technologies\nMade with ❤️ for learners everywhere.',
+                  style: TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    height: 1.6,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
